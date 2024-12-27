@@ -76,8 +76,8 @@ namespace BeatSaberCinema
 
 		private BeatmapLevel? _currentLevel;
 		private bool _currentLevelIsPlaylistSong;
-		private ExtraSongData? _extraSongData;
-		private ExtraSongData.DifficultyData? _difficultyData;
+		private SongData? _extraSongData;
+		private SongData.DifficultyData? _difficultyData;
 		private VideoConfig? _currentVideo;
 		private bool _videoMenuActive;
 		private int _selectedCell;

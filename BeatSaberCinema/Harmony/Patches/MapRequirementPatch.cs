@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using HarmonyLib;
 using JetBrains.Annotations;
 using SongCore;
@@ -28,13 +28,13 @@ namespace BeatSaberCinema.Patches
 					return;
 				}
 
-				var songData = Collections.RetrieveExtraSongData(SongCore.Utilities.Hashing.GetCustomLevelHash(__instance._beatmapLevel));
+				var songData = Collections.GetCustomLevelSongData(__instance._beatmapLevel.levelID);
 				if (songData == null)
 				{
 					return;
 				}
 
-				var diffData = Collections.RetrieveDifficultyData(__instance._beatmapLevel, __instance.beatmapKey);
+				var diffData = Collections.GetCustomLevelSongDifficultyData(__instance.beatmapKey);
 				Events.SetExtraSongData(songData, diffData);
 
 				if (diffData?.HasCinemaRequirement() != true)
